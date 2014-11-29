@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tododiary.TodoDiaryMainController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="NEVER" />
+    <RowConstraints maxHeight="35.0" minHeight="35.0" prefHeight="35.0" vgrow="NEVER" />
+    <RowConstraints minHeight="10.0" prefHeight="348.0" vgrow="ALWAYS" />
+  </rowConstraints>
+<children><HBox alignment="BOTTOM_LEFT" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" prefWidth="200.0" spacing="10.0">
+    <children><DatePicker fx:id="date_picked" maxHeight="25.0" minHeight="25.0" prefHeight="25.0" 
+                          prefWidth="162.0" >
+        <HBox.margin>
+        <Insets />
+        </HBox.margin></DatePicker>
+    <MenuBar fx:id="extras_button">
+        <menus>
+          <Menu mnemonicParsing="false" text="Extras">
+            <items>
+                <CheckMenuItem mnemonicParsing="false" 
+                        onAction="#handleEnableTodoButtonAction" fx:id="EnableTodo" />
+                <MenuItem 
+                        onAction="#handleChooseFolderButtonAction" fx:id="ChooseFolder" />
+            </items>
+          </Menu>
+        </menus>
+    </MenuBar>
+      <RadioButton maxHeight="25.0" minHeight="25.0" prefHeight="25.0" 
+                 onAction="#handleSingleDayButtonAction" fx:id="singleDayView"/>
+      <RadioButton maxHeight="25.0" minHeight="25.0" prefHeight="25.0" 
+                 onAction="#handleRawDBButtonAction" fx:id="rawDBView"/>
+</children>
+<GridPane.margin>
+<Insets />
+</GridPane.margin></HBox><HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0" GridPane.rowIndex="1">
+<children>
+    <Button GridPane.rowIndex="1" onAction="#handleSaveButtonAction" fx:id="save_button" />
+    <Button onAction="#handleTodayButtonAction" fx:id="goto_today"/>
+    <Button onAction="#handleJumbleButtonAction" fx:id="jumble_button"/>
+    <Button onAction="#handleMarkDoneButtonAction" fx:id="markdone_button"/>
+    <Button onAction="#handlePrevTodoButtonAction" fx:id="prevtodo_button"/>
+    <Button onAction="#handleNextTodoButtonAction" fx:id="nexttodo_button"/>
+    <Label fx:id="todocount" />
+</children>
+<GridPane.margin>
+<Insets left="10.0" />
+</GridPane.margin></HBox><TextArea fx:id="entrytext"
+        prefHeight="200.0" prefWidth="200.0" wrapText="true" GridPane.rowIndex="2" />
+</children>
+</GridPane>
