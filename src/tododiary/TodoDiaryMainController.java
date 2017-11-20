@@ -732,14 +732,14 @@ public class TodoDiaryMainController implements Initializable {
                                         } else {
                                             writeline = thisLine + endline;
                                         }
-                                        
                                         bw.write(writeline);
                                         marked_todo_in_file = writeline.contains(todo_flag_sign);
                                         inside_date = true;
-                                        //TODO: Det kunne nu være rart, hvis jeg kunne lave
-                                        //det sådan, at der altid er mindst én ekstra
-                                        //ekstra-linie mellem datoer...
-                                        bw.write(current_entrytext.replaceAll("\n", endline));
+                                        current_entrytext = current_entrytext.split("\\n+$", 2)[0];
+                                        bw.write(current_entrytext.replaceAll("\n", endline).split("\\n+$", 2)[0] + endline + endline);
+                                        //Replace all newlines with the endline-sequence defined +
+                                        //...make certain that the entry ends with only one extra newline
+                                        // (removing all the last endlines + inserting two new ones
                                     } else {
                                         bw.write(thisLine + endline);
                                     }

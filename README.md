@@ -23,3 +23,5 @@ Several applications are created around this project. I'm not affiliated with th
 v1.0: December 2014
 - First public release
 
+v1.0.1: November 2017
+- Minor bugfix: Fixing amount of spacelines between each date-entry (always one extra newline).
