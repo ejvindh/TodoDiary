@@ -8,10 +8,12 @@ package tododiary;
 
 import java.util.prefs.Preferences;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 /**
@@ -44,6 +46,14 @@ public class TodoDiaryStartup extends Application {
         stage.getIcons().add(new Image(TodoDiaryStartup.class.
                 getResourceAsStream( "icon.png" )));
         stage.setScene(scene);
+        scene.addEventHandler(KeyEvent.KEY_PRESSED, new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent event) {
+                // your desired behavior
+                if(event.isAltDown())
+                    event.consume();
+            }
+        });
         stage.show();
     }
 

@@ -286,6 +286,7 @@ public class TodoDiaryMainController implements Initializable {
         populateText(currentyear, selected_month, selected_day);
         undone_count = countUndone(currentyear);//Hvor mange undone's er der i år?
         ButtonTexts();//opdater knapper o.lign
+
         
         
         date_picked.valueProperty().addListener((ObservableValue<? extends LocalDate> observable, LocalDate oldValue, LocalDate newValue) -> {
@@ -312,6 +313,9 @@ public class TodoDiaryMainController implements Initializable {
         Platform.runLater(new Runnable() {
 
             public void run() {
+                entrytext.getScene().getAccelerators().put(
+                        new KeyCodeCombination(KeyCode.L, KeyCombination.SHORTCUT_DOWN),
+                        entrytext::requestFocus);
                 date_picked.getScene().getAccelerators().put(
                         new KeyCodeCombination(KeyCode.D, KeyCombination.SHORTCUT_DOWN),
                         date_picked::show);
@@ -342,9 +346,11 @@ public class TodoDiaryMainController implements Initializable {
                 nexttodo_button.getScene().getAccelerators().put(
                         new KeyCodeCombination(KeyCode.N, KeyCombination.SHORTCUT_DOWN),
                         nexttodo_button::fire);
+                entrytext.requestFocus();
             }
         });
 
+        entrytext.setTooltip(new Tooltip("<ctrl/cmd l>"));
         date_picked.setTooltip(new Tooltip("<ctrl/cmd d>"));
         extras_button.setTooltip(new Tooltip("<ctrl/cmd e>"));
         singleDayView.setTooltip(new Tooltip("<ctrl/cmd o>"));
