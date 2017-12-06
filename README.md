@@ -31,5 +31,5 @@ v1.0.1: November 2017
 
 v1.0.2: December 2017
 - Minor bugfix: Avoid that ALT-key selects Extras-menu. 
--- Adding shortcut for Textarea (cmd-l).
+- Adding shortcut for Textarea (cmd-l).
 - Starting with Textarea in focus.
