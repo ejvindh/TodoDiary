@@ -1,3 +1,6 @@
+![Github Downloads (latest)](https://img.shields.io/github/downloads/ejvindh/TodoDiary/latest/total.svg?style=flat-square)
+![Github Downloads (total)](https://img.shields.io/github/downloads/ejvindh/TodoDiary/total.svg?style=flat-square)
+
 TodoDiary - desktop
 ===================
 
@@ -25,3 +28,8 @@ v1.0: December 2014
 
 v1.0.1: November 2017
 - Minor bugfix: Fixing amount of spacelines between each date-entry (always one extra newline).
+
+v1.0.2: December 2017
+- Minor bugfix: Avoid that ALT-key selects Extras-menu. 
+-- Adding shortcut for Textarea (cmd-l).
+- Starting with Textarea in focus.
